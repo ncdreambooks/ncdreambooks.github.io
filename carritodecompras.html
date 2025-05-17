@@ -56,8 +56,13 @@
       <label for="vencimiento">Fecha de vencimiento</label>
       <input type="month" id="vencimiento" name="vencimiento" required />
 
-      <label for="cvv">CVV</label>
-      <input type="text" id="cvv" name="cvv" maxlength="3" required />
+     <label for="cvv">CVV</label>
+      <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="4" required>
+
+      <label for="terminos">
+        <input type="checkbox" id="terminos" name="terminos" required>
+        Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a>.
+      </label>
 
       <button type="submit">Comprar</button>
     </form>
