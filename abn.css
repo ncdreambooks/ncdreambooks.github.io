@@ -47,7 +47,6 @@ p {
   padding: 15px;
   transition: transform 0.3s ease;
 }
-}
 
 .agregar-carrito:hover, .a:hover {
   background-color: #6c3483;
