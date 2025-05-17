@@ -1,4 +1,3 @@
-/* Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +8,32 @@ body {
   background-color: #f9f4fc;
   color: #4b007d;
   text-align: center;
-  padding-top: 70px; /* espacio para encabezado fijo */
+  padding-top: 70px;
+  margin: 0;
+}
+.encabezado {
+  background-color: #d2b4de;
+  color: white;
+  padding: 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0;
 }
 .menu {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  background-color: #d2b4de;
+  margin: 0;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 .menu a {
   text-decoration: none;
   color: white;
@@ -27,45 +42,27 @@ body {
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
-
 .menu a:hover {
   background-color: #4b0082;
 }
-.encabezado {
- background-color: #d2b4de ;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-
 .logo-container {
   display: flex;
   align-items: center;
 }
-
 .logo {
   height: 40px;
   max-width: 100px;
   object-fit: contain;
 }
-
 h1 {
   color: #4b007d;
   margin: 30px auto;
   font-size: 2.2em;
 }
-
 .titulo-decorado {
   border-bottom: 3px solid #7a00cc;
   padding-bottom: 5px;
 }
-
-/* Contenedor del carrito */
 #carrito-contenido {
   max-width: 800px;
   margin: auto;
@@ -75,8 +72,6 @@ h1 {
   box-shadow: 0 2px 10px rgba(75, 0, 125, 0.15);
   text-align: left;
 }
-
-/* Item del carrito */
 .item {
   display: flex;
   align-items: center;
@@ -88,22 +83,18 @@ h1 {
   margin-bottom: 15px;
   box-shadow: 0 2px 5px rgba(75, 0, 125, 0.1);
 }
-
 .item img {
   width: 80px;
   height: 100px;
   border-radius: 8px;
   object-fit: cover;
 }
-
 .item-info {
   flex: 1;
   padding: 0 15px;
   font-size: 1.1rem;
   color: #4b007d;
 }
-
-/* Botón eliminar */
 .item button {
   background-color: #a32f97;
   color: white;
@@ -114,12 +105,9 @@ h1 {
   font-weight: 600;
   transition: background-color 0.3s;
 }
-
 .item button:hover {
   background-color: #7a007f;
 }
-
-/* Total */
 .total {
   font-size: 1.4em;
   margin: 20px auto;
@@ -127,8 +115,6 @@ h1 {
   font-weight: 700;
   text-align: center;
 }
-
-/* Botón finalizar compra */
 #finalizar-compra,
 #vaciar-carrito {
   background-color: #7a00cc;
@@ -142,20 +128,15 @@ h1 {
   transition: background-color 0.3s;
   margin: 10px 10px;
 }
-
 #finalizar-compra:hover,
 #vaciar-carrito:hover {
   background-color: #590099;
 }
-
-/* Contenedor botones */
 .botones-principales {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-
-/* Formulario de pago */
 #formulario-pago {
   max-width: 600px;
   margin: 30px auto;
@@ -166,21 +147,18 @@ h1 {
   text-align: left;
   display: none;
 }
-
 #formulario-pago h2 {
   text-align: center;
   color: #4b007d;
   margin-bottom: 25px;
   font-weight: 700;
 }
-
 label {
   display: block;
   margin: 10px 0 6px;
   font-weight: 600;
   color: #4b007d;
 }
-
 input[type="text"],
 input[type="month"],
 select {
@@ -192,14 +170,12 @@ select {
   box-sizing: border-box;
   transition: border-color 0.3s;
 }
-
 input[type="text"]:focus,
 input[type="month"]:focus,
 select:focus {
   border-color: #7a00cc;
   outline: none;
 }
-
 form button[type="submit"] {
   background-color: #7a00cc;
   color: white;
@@ -213,55 +189,44 @@ form button[type="submit"] {
   transition: background-color 0.3s;
   margin-top: 10px;
 }
-
 form button[type="submit"]:hover {
   background-color: #590099;
 }
-
 form a {
   color: #7a00cc;
   text-decoration: underline;
 }
-
-/* Responsive */
 @media (max-width: 600px) {
   .encabezado {
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
   }
-
   .logo {
     height: 36px;
   }
-
   .menu {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     margin-top: 10px;
   }
-
   .item {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .item img {
     margin-bottom: 10px;
   }
-
   #formulario-pago {
     margin: 20px 10px;
     padding: 20px;
   }
-
   #finalizar-compra,
   #vaciar-carrito {
     width: 100%;
     margin: 10px 0;
   }
-
   .botones-principales {
     flex-direction: column;
     gap: 10px;
