@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito de Compras - N'C BOOKS</title>
+  <link rel="stylesheet" href="carritodecompras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="encabezado">
+    <nav class="menu">
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="registro.html">Registrarse</a>
+        <a href="carritodecompras.html">Carrito</a>
+      </div>
+    </nav>
+  </header>
+
+  <img src="logo.png" alt="N'C BOOKS Logo" class="logo">
+  <h1><span class="titulo-decorado">Carrito de Compras</span></h1>
+
+  <section id="carrito-contenido">
+    <ul id="carrito-lista"></ul>
+    <div id="total" class="total"></div>
+    <div class="botones-principales">
+      <button id="finalizar-compra">Finalizar compra</button>
+      <button id="vaciar-carrito">Vaciar carrito</button>
+    </div>
+  </section>
+
+  <section id="formulario-pago">
+    <h2>Formulario de Pago</h2>
+    <form id="pago-form">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Dirección de facturación" required>
+
+      <label for="tipo-tarjeta">Tipo de Tarjeta</label>
+      <select id="tipo-tarjeta" name="tipo-tarjeta" required>
+        <option value="">Selecciona una opción</option>
+        <option value="visa">Visa</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="amex">American Express</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="tarjeta">Número de tarjeta</label>
+      <input type="text" id="tarjeta" name="tarjeta" maxlength="16" required />
+
+      <label for="vencimiento">Fecha de vencimiento</label>
+      <input type="month" id="vencimiento" name="vencimiento" required />
+
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" name="cvv" maxlength="3" required />
+
+      <button type="submit">Comprar</button>
+    </form>
+  </section>
+
+  <script>
+    const carritoLista = document.getElementById('carrito-lista');
+    const totalDiv = document.getElementById('total');
+    const btnFinalizar = document.getElementById('finalizar-compra');
+    const btnVaciar = document.getElementById('vaciar-carrito');
+    const formularioPago = document.getElementById('formulario-pago');
+    const pagoForm = document.getElementById('pago-form');
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    function mostrarCarrito() {
+      carritoLista.innerHTML = '';
+      formularioPago.style.display = 'none';
+
+      if (carrito.length === 0) {
+        carritoLista.innerHTML = '<li>No hay productos en el carrito.</li>';
+        totalDiv.textContent = '';
+        btnFinalizar.style.display = 'none';
+        btnVaciar.style.display = 'none';
+        return;
+      }
+
+      btnFinalizar.style.display = 'inline-block';
+      btnVaciar.style.display = 'inline-block';
+
+      let total = 0;
+
+      carrito.forEach(producto => {
+        const li = document.createElement('li');
+        li.classList.add('item');
+        li.innerHTML = `
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <div class="item-info">
+            <strong>${producto.nombre}</strong><br>
+            Cantidad: ${producto.cantidad}<br>
+            Precio: $${(producto.precio * producto.cantidad).toFixed(2)}
+          </div>
+          <button class="btn-eliminar" data-nombre="${producto.nombre}">Eliminar</button>
+        `;
+        carritoLista.appendChild(li);
+        total += producto.precio * producto.cantidad;
+      });
+
+      totalDiv.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    carritoLista.addEventListener('click', e => {
+      if (e.target.classList.contains('btn-eliminar')) {
+        const nombre = e.target.getAttribute('data-nombre');
+        carrito = carrito.filter(p => p.nombre !== nombre);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+      }
+    });
+
+    btnFinalizar.addEventListener('click', () => {
+      formularioPago.style.display = 'block';
+      window.scrollTo({ top: formularioPago.offsetTop, behavior: 'smooth' });
+    });
+
+    btnVaciar.addEventListener('click', () => {
+      localStorage.removeItem('carrito');
+      carrito = [];
+      mostrarCarrito();
+    });
+
+    pagoForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const nombre = pagoForm.nombre.value.trim();
+      const direccion = pagoForm.direccion.value.trim();
+
+      if (!nombre || !direccion) return;
+
+      const totalCompra = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+
+      localStorage.setItem('comprobante', JSON.stringify({
+        nombre,
+        direccion,
+        items: carrito,
+        total: totalCompra.toFixed(2),
+        fecha: new Date().toLocaleString()
+      }));
+
+      localStorage.removeItem('carrito');
+      carrito = [];
+      window.location.href = 'comprobante.html';
+    });
+
+    mostrarCarrito();
+  </script>
+</body>
+</html>

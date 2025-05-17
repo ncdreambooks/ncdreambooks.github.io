@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Detalle del Libro</title>
+	<link rel="stylesheet" type="text/css" href="abn.css">
+</head>
+<body>
+<header class="encabezado">
+  <nav class="menu">
+	  <a href="index.html">Inicio</a>
+    <a href="categoria.html">Catálogo</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="registro.html">Registrarse</a>
+    <a href="carritodecompras.html">Carrito</a>
+  </nav>
+</header>
+<div class="contenedor">
+  <img src="damian.png" class="oyp">
+    <div class="detalles">
+    <h1><strong>Damián</strong></h1>
+<p><strong>Numero de Páginas:</strong> 384</p>
+<p><strong>Idioma:</strong> Español</p>
+<p><strong>Editorial:</strong> Editorial Planeta; Edición Clásica</p>
+<p><strong>Fecha de publicación:</strong> 20 abril 2020</p>
+<p><strong>Precio:</strong> $349</p>
+<p><strong>Edad de lectura:</strong> A partir de 14 años a 18 años</p>
+<p><strong>Dimensiones:</strong> 13.97 x 3.00 x 21.59 cm</p>
+
+        <div class="botones">
+   <button class="agregar-carrito" data-nombre="Damián" data-precio="349">Agregar al carrito</button>
+            <a href="categoria.html"><button class="a">Catálogo</button></a>
+        </div>
+    </div>
+</div>
+	 <div id="carrito-flotante" onclick="window.location.href='carritodecompras.html'">
+    🛒 <span id="contador-carrito">0</span>
+  </div>
+<script src="carro.js"></script>
+
+
+</body>
+</html>

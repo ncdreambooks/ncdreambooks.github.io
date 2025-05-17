@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4efff;
+  font-family: 'Roboto', sans-serif;
+  color: #4b0082;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+.encabezado {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #d2b4de;
+  color: white;
+  text-align: center;
+}
+
+.menu {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #4b0082;
+}
+
+
+h3 {
+  margin-top: 20px;
+  color: #6a0dad;
+  font-size: 2em;
+}
+
+#resumen-carrito {
+  background-color: #ede3ff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#productos-carrito {
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+#productos-carrito li {
+  padding: 5px;
+  border-bottom: 1px solid #d1c4e9;
+}
+
+#total-a-pagar {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #6a0dad;
+}
+
+
+.formulario-compra {
+  background-color: #ede3ff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.formulario-compra label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #6c3483;
+}
+
+.formulario-compra input,
+.formulario-compra select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #bb8fce;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.formulario-compra button {
+  width: 100%;
+  padding: 12px;
+  background-color: #9b30ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-compra button:hover {
+  background-color: #6a0dad;
+}
+
+footer {
+  font-size: 20px;
+  padding: 20px;
+  background-color: #e6d4ff;
+  margin-top: 40px;
+  color: #4b0082;
+}
+
+footer .m {
+  margin-bottom: 20px;
+}
+
+footer .redes a {
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: #6a0dad;
+  transition: color 0.3s;
+}
+
+footer .redes a:hover {
+  color: #4b0082;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    text-align: center;
+  }

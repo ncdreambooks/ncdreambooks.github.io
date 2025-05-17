@@ -1,0 +1,154 @@
+body {
+  background-color: #f4efff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.encabezado {
+  background-color: #d2b4de;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contenedor-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.eslogan {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #f0e9ff;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.menu a {
+  color: #6c3483;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #6c3483;
+  color: white;
+}
+
+/* Estilos principales del comprobante */
+.contenedor {
+  max-width: 600px;
+  margin: 140px auto 100px;
+  background-color: #f9f4fd;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contenedor h2 {
+  color: #6c3483;
+  margin-bottom: 20px;
+}
+
+.contenedor h3 {
+  margin-top: 30px;
+  color: #4a235a;
+}
+
+.contenedor p,
+.contenedor li {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+#lista-productos {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+#lista-productos li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Botón volver al inicio */
+.agregar-carrito {
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  background-color: #6c3483;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.agregar-carrito:hover {
+  background-color: #4a235a;
+}
+
+/* Footer */
+footer {
+  background-color: #d2b4de;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+footer .menu {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+footer .menu a {
+  font-size: 1.3rem;
+  color: #6c3483;
+  transition: color 0.3s ease;
+}
+
+footer .menu a:hover {
+  color: #f0e9ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor {
+    margin: 140px 20px 120px;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
