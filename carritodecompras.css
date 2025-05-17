@@ -8,20 +8,20 @@ body {
   background-color: #f9f4fc;
   color: #4b007d;
   text-align: center;
-  padding-top: 70px;
   margin: 0;
+  padding: 0;
 }
 .encabezado {
   background-color: #d2b4de;
   color: white;
   padding: 0;
+  margin: 0;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  margin: 0;
 }
 .menu {
   display: flex;
@@ -200,7 +200,7 @@ form a {
   .encabezado {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px;
+    padding: 0;
   }
   .logo {
     height: 36px;
@@ -209,7 +209,8 @@ form a {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 0;
+    padding: 10px;
   }
   .item {
     flex-direction: column;
