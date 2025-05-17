@@ -14,7 +14,7 @@ body {
 .encabezado {
   background-color: #d2b4de;
   color: white;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   text-align: center;
   position: sticky;
