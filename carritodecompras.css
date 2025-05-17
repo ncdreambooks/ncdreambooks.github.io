@@ -4,8 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Tipografía general y fondo */
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f9f4fc;
@@ -13,37 +11,10 @@ body {
   text-align: center;
   padding-top: 70px; /* espacio para encabezado fijo */
 }
-
-.encabezado {
-  background-color: #d2b4de;
-  color: white;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-   text-align: center;
-}
-
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  max-width: 100px;
-  object-fit: contain;
-}
-
-/* Menú de navegación */
 .menu {
+  margin-top: 20px;
   display: flex;
+  justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -59,10 +30,30 @@ body {
 
 .menu a:hover {
   background-color: #4b0082;
+}
+.encabezado {
+ background-color: #d2b4de ;
   color: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Título */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
 h1 {
   color: #4b007d;
   margin: 30px auto;
