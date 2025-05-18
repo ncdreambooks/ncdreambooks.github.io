@@ -164,3 +164,16 @@ p {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+button {
+  background-color: #9b30ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #6a0dad;
+}
