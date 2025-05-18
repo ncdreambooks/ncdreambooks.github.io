@@ -24,6 +24,26 @@ h2 {
 section.seccion {
   max-width: 800px;
   margin: 30px auto;
+  .menu {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #4b0082;
+}
   background-color: #f9f4fd;
   padding: 25px;
   border-radius: 12px;
