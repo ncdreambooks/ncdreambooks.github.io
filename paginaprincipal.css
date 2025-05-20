@@ -1,188 +1,166 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos base */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4efff;
-  color: #4b0082;
- text-align: center;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f9f8fc;
+  color: #333;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Encabezado */
 .encabezado {
-  text-align: center;
-  padding: 30px 20px;
-  background-color: #d2b4de ;
+  background: #4a0f5d;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contenedor-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .contenedor-logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  width: 200px;
-  height: 100px
-  margin-bottom: 10px;
+  height: 50px;
 }
 
 .eslogan {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #7d3c98 ;
-}
-
-.menu {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin: 0;
 }
 
 .menu a {
-  text-decoration: none;
-  color: #6a0dad;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  margin-left: 1rem;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .menu a:hover {
-  background-color: #4b0082;
+  color: #b0ffbf;
 }
 
+/* Catálogo */
 .catalogo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.catalogo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #4a0f5d;
+  border-left: 5px solid #b0ffbf;
+  padding-left: 1rem;
 }
 
 .libro {
-  background-color: #ede3ff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 1rem;
   transition: transform 0.3s ease;
 }
 
 .libro:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 .imagen-libro {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  max-height: 300px;
-  object-fit: cover;
-  margin-bottom: 10px;
 }
 
 .info-libro {
-  padding-top: 10px;
+  padding: 1rem 0;
 }
 
 .info-libro h2 {
-  font-size: 1.4em;
-  color: #4b0082;
+  margin: 0;
+  color: #333;
 }
 
-.info-libro p {
-  font-size: 1em;
-  color: #6c3483;
-  margin: 5px 0;
-}
-
-a {
-  text-decoration: none;
-  color: #6a0dad;
-  font-size: 15px;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #4b0082;
-}
-
-
-.precio {
-  font-weight: bold;
-  color: #6a0dad;
-  margin: 10px 0;
-}
-
-button {
-  background-color: #9b30ff;
-  color: white;
+.agregar-carrito,
+.boton-comprar-ahora {
+  margin-right: 0.5rem;
+  padding: 0.6rem 1rem;
   border: none;
-  padding: 10px 15px;
   border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #6a0dad;
+.agregar-carrito {
+  background: #b0ffbf;
+  color: #000;
 }
 
-footer {
-  background-color: #e6d4ff;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #4b0082;
+.agregar-carrito:hover {
+  background: #7cd489;
 }
 
-.redes a {
-  margin: 0 10px;
-  font-size: 1.5em;
-  color: #6a0dad;
-  transition: color 0.3s;
+.boton-comprar-ahora {
+  background: #d07ef0;
+  color: #fff;
 }
 
-.redes a:hover {
-  color: #4b0082;
+.boton-comprar-ahora:hover {
+  background: #b75dd4;
 }
 
+/* Carrito flotante */
 #carrito-flotante {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
-  background-color: #884ea0;
+  background: #4a0f5d;
   color: white;
-  font-size: 1.5em;
   padding: 10px 15px;
   border-radius: 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
 }
 
-#carrito-flotante:hover {
-  transform: scale(1.1);
-}
-
-.grid-libros {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 20px;
-}
-
-.catalogo h2 {
+/* Footer */
+footer {
+  background: #4a0f5d;
+  color: white;
   text-align: center;
-  width: 100%;
-  margin-bottom: 10px;
-  font-size: 1.8em;
-  color: #4b0082;
+  padding: 1rem;
+  margin-top: 4rem;
+}
+
+footer .redes a {
+  margin: 0 0.5rem;
+  color: white;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+footer .redes a:hover {
+  color: #b0ffbf;
 }
