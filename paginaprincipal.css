@@ -1,18 +1,13 @@
-/* Fuente profesional */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9fb;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
 header.encabezado {
-  background-color: #2e7d32; /* Verde profesional */
+  background-color: #6a1b9a;
   color: white;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
@@ -23,142 +18,83 @@ header.encabezado {
 }
 
 .logo {
-  width: 100px;
+  width: 120px;
   height: auto;
 }
 
 .eslogan {
-  margin-top: 10px;
   font-style: italic;
-  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .menu {
   margin-top: 15px;
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
 }
 
 .menu a {
-  text-decoration: none;
+  margin: 0 15px;
   color: white;
+  text-decoration: none;
   font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.menu a:hover {
-  background-color: #1b5e20;
-}
-
-main {
-  padding: 30px 20px;
-}
-
-.catalogo > h2 {
-  color: #2e7d32;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  text-align: center;
 }
 
 .catalogo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: 40px;
+  padding: 20px;
 }
 
 .libro {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 16px;
-  width: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease;
-}
-
-.libro:hover {
-  transform: translateY(-5px);
+  border-radius: 10px;
+  margin: 15px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .imagen-libro {
-  width: 130px;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.imagen-libro:hover {
-  transform: scale(1.05);
+  border-radius: 8px;
 }
 
 .info-libro {
   margin-top: 10px;
-  text-align: center;
-}
-
-.info-libro h2 {
-  font-size: 1.1rem;
-  color: #2e7d32;
-  margin-bottom: 6px;
-}
-
-.info-libro p {
-  margin: 3px 0;
-  font-size: 0.9rem;
 }
 
 button.agregar-carrito,
 button.boton-comprar-ahora {
   margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #388e3c;
-  color: white;
+  padding: 10px;
   border: none;
   border-radius: 6px;
+  background-color: #6a1b9a;
+  color: white;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 button.boton-comprar-ahora {
-  background-color: #2e7d32;
+  background-color: #4a148c;
 }
 
-button:hover {
-  background-color: #1b5e20;
-}
-
-/* Carrito flotante */
 #carrito-flotante {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #2e7d32;
+  background-color: #6a1b9a;
   color: white;
-  padding: 12px 20px;
+  padding: 12px;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.2s ease;
-}
-
-#carrito-flotante:hover {
-  transform: scale(1.05);
+  z-index: 999;
 }
 
 footer {
-  background-color: #2e7d32;
+  background-color: #6a1b9a;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -168,28 +104,5 @@ footer {
 footer .redes a {
   color: white;
   margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-footer .redes a:hover {
-  color: #c8e6c9;
-}
-
-@media screen and (max-width: 600px) {
-  .libro {
-    width: 90%;
-  }
-
-  .imagen-libro {
-    width: 100px;
-  }
-
-  .menu {
-    justify-content: center;
-  }
-
-  .menu a {
-    font-size: 0.9rem;
-  }
+  font-size: 20px;
 }
