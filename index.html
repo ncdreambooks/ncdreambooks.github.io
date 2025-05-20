@@ -7,24 +7,22 @@
   <link rel="stylesheet" href="paginaprincipal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 
   <header class="encabezado">
-    <div class="contenedor-logo">
-      <img src="logo.png" alt="Logo N'C BOOKS" class="logo" />
+    <div class="contenedor-superior">
+      <div class="contenedor-logo">
+        <img src="logo.png" alt="Logo N'C BOOKS" class="logo" />
+        <p class="eslogan">Refugio en las palabras. Libertad en las historias.</p>
+      </div>
+      <nav class="menu">
+        <a href="categoria.html">Catálogo</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="registro.html">Registrarse</a>
+        <a href="carritodecompras.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+      </nav>
     </div>
- <p class="eslogan" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.5em; color: #4B2E83;">
-  <strong>Refugio en las palabras.<br>Libertad en las historias.</strong>
-</p>
-
-
-    <nav class="menu">
-      <a href="categoria.html">Catálogo</a>
-      <a href="contacto.html">Contacto</a>
-        <a href="informacion.html">Informacion</a>
-      <a href="registro.html">Registrarse</a>
-      <a href="carritodecompras.html">Carrito</a>
-    </nav>
   </header>
 
   <main>
@@ -87,10 +85,9 @@
             <div class="info-libro">
               <h2>Fabricante de Lágrimas</h2>
               <p><strong>Autor:</strong> Erin Doom</p>
-              <p><strong>Género:</strong> Fantasía, Romance y Aventura</p>
-              <p><strong>Precio anterior:</strong> $399</p>
-               <p><strong>Precio actual:</strong> $299.25</p>
-              <p><strong>25%</strong></p>
+              <p><strong>Género:</strong> Novela rosa, Romance contemporáneo, Fantasía, Aventura</p>
+              <p><strong>Precio:</strong> $399</p>
+              <p><strong>25% descuento</strong></p>
             </div>
           </a>
           <button class="agregar-carrito" data-nombre="Fabricante de Lágrimas" data-precio="299.25">Agregar al carrito</button>
@@ -104,9 +101,8 @@
               <h2>Damián</h2>
               <p><strong>Autor:</strong> Alex Mirez</p>
               <p><strong>Género:</strong> Novela rosa, Ficción</p>
-              <p><strong>Precio anterior:</strong> $349</p>
-               <p><strong>Precio actual:</strong> $261.75</p>
-              <p><strong>25%</strong></p>
+              <p><strong>Precio:</strong> $349</p>
+              <p><strong>25% descuento</strong></p>
             </div>
           </a>
           <button class="agregar-carrito" data-nombre="Damián" data-precio="261.75">Agregar al carrito</button>
@@ -124,15 +120,26 @@
   <footer>
     <p>Contactos:</p>
     <div class="redes">
-      <a href="https://www.instagram.com/nc_dreambooks/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/nc_books25/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://www.tiktok.com/@nc_books25" target="_blank"><i class="fab fa-tiktok"></i></a>
       <a href="https://wa.me/56666666666" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="mailto:ncbooks25@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>&copy; 2025 Nicole's DreamBooks - Nicole Casillas</p>
+    <p>&copy; 2025 N'C BOOKS - Nicole Casillas</p>
   </footer>
 
   <script src="carro.js"></script>
-    <script src="comprar.js"></script>
+  <script>
+    document.querySelectorAll('.boton-comprar-ahora').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const nombre = boton.getAttribute('data-nombre');
+        const precio = parseFloat(boton.getAttribute('data-precio'));
+
+        const producto = { nombre, precio, cantidad: 1 };
+        localStorage.setItem('productoCompraDirecta', JSON.stringify(producto));
+        window.location.href = 'compra.html';
+      });
+    });
+  </script>
 </body>
 </html>
