@@ -1,3 +1,4 @@
+/* ===== Reset básico ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   text-align: center;
 }
 
+/* ===== Imágenes laterales ===== */
 .ol, .l {
   width: 120px;
   height: auto;
@@ -28,6 +30,7 @@ body {
   left: 2px;
 }
 
+/* ===== Título ===== */
 h1 {
   padding: 20px;
   background-color: #d2b4de;
@@ -36,6 +39,7 @@ h1 {
   font-size: 2em;
 }
 
+/* ===== Catálogo y libros ===== */
 .catalogo {
   display: flex;
   flex-wrap: wrap;
@@ -81,6 +85,7 @@ h1 {
   margin: 5px 0;
 }
 
+/* ===== Enlaces ===== */
 a {
   text-decoration: none;
   color: #6a0dad;
@@ -92,6 +97,7 @@ a:hover {
   color: #4b0082;
 }
 
+/* ===== Botones ===== */
 .a {
   font-size: 25px;
   background-color: #d2b4de;
@@ -111,12 +117,14 @@ a:hover {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
 
-.agregar-carrito, .boton-comprar-ahora:hover {
+.agregar-carrito:hover, .boton-comprar-ahora:hover {
   background-color: #6a0dad;
 }
 
+/* ===== Carrito flotante ===== */
 #carrito-flotante {
   position: fixed;
   top: 80px;
@@ -135,51 +143,8 @@ a:hover {
 #carrito-flotante:hover {
   transform: scale(1.1);
 }
-#carrito-container {
-  text-align: left;
-  position: fixed;
-  top: 50px;
-  right: 10px;
-  width: 300px;
-  background-color: #f9ebf9;
-  border: 2px solid #d7bde2;
-  border-radius: 10px;
-  padding: 15px;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-height: 90vh;
-  overflow-y: auto;
-}
 
-#carrito-container h2 {
-  font-size: 1.2em;
-  color: #6c3483;
-  margin-top: 0;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-#carrito-lista {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#carrito-lista li {
-  font-size: 0.95em;
-  margin-bottom: 5px;
-  border-bottom: 1px solid #d7bde2;
-  padding: 4px 0;
-  color: #4a235a;
-}
-
-#total {
-  margin-top: 10px;
-  font-weight: bold;
-  text-align: center;
-  color: #884ea0;
-}
-
+/* ===== Footer ===== */
 footer {
   font-size: 20px;
   padding: 20px;
@@ -195,6 +160,7 @@ footer {
   color: white;
 }
 
+/* ===== Botones inferiores ===== */
 .inicio, .arriba {
   margin-top: 10px;
   padding: 10px 15px;
@@ -209,6 +175,8 @@ footer {
 .inicio:hover, .arriba:hover {
   background-color: #6a0dad;
 }
+
+/* ===== Menú de navegación ===== */
 .menu {
   margin-top: 20px;
   display: flex;
@@ -228,9 +196,11 @@ footer {
 
 .menu a:hover {
   background-color: #4b0082;
+  color: white;
 }
+
 .encabezado {
- background-color: #d2b4de ;
+  background-color: #d2b4de;
   color: white;
   padding: 10px;
   text-align: center;
@@ -240,17 +210,52 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-
-.contenedor-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-@media (max-width: 768px) {
-  .contact-container {
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 768px) {
+  .catalogo {
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .libro {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 16px;
     text-align: center;
   }
+
+  .agregar-carrito, .boton-comprar-ahora {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  #carrito-flotante {
+    bottom: 20px;
+    top: auto;
+    font-size: 1.2em;
+    padding: 8px 12px;
+  }
+}
