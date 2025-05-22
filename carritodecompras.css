@@ -1,21 +1,22 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Lato', sans-serif;
   background-color: #f9f4fc;
   color: #4b007d;
   text-align: center;
-  margin: 0;
-  padding: 0;
 }
+
+/* ENCABEZADO */
 .encabezado {
   background-color: #d2b4de;
   color: white;
   padding: 20px 0;
-  margin: 0;
   text-align: center;
   position: sticky;
   top: 0;
@@ -24,18 +25,16 @@ body {
   width: 100%;
 }
 
+/* MENÚ */
 .menu {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
   background-color: #d2b4de;
-  margin: 0;
   padding: 16px 0;
   width: 100%;
-  box-sizing: border-box;
 }
-
 
 .menu a {
   text-decoration: none;
@@ -45,27 +44,37 @@ body {
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
+
 .menu a:hover {
   background-color: #4b0082;
+  color: white;
 }
+
+/* LOGO */
 .logo-container {
   display: flex;
   align-items: center;
 }
+
 .logo {
   height: 40px;
   max-width: 100px;
   object-fit: contain;
 }
+
+/* TÍTULOS */
 h1 {
   color: #4b007d;
   margin: 30px auto;
   font-size: 2.2em;
 }
+
 .titulo-decorado {
   border-bottom: 3px solid #7a00cc;
   padding-bottom: 5px;
 }
+
+/* CARRITO */
 #carrito-contenido {
   max-width: 800px;
   margin: auto;
@@ -75,6 +84,8 @@ h1 {
   box-shadow: 0 2px 10px rgba(75, 0, 125, 0.15);
   text-align: left;
 }
+
+/* ITEM DEL CARRITO */
 .item {
   display: flex;
   align-items: center;
@@ -85,19 +96,25 @@ h1 {
   padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 5px rgba(75, 0, 125, 0.1);
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .item img {
   width: 80px;
   height: 100px;
   border-radius: 8px;
   object-fit: cover;
 }
+
 .item-info {
   flex: 1;
   padding: 0 15px;
   font-size: 1.1rem;
   color: #4b007d;
 }
+
+/* BOTONES DE ITEM */
 .item button {
   background-color: #a32f97;
   color: white;
@@ -108,9 +125,12 @@ h1 {
   font-weight: 600;
   transition: background-color 0.3s;
 }
+
 .item button:hover {
   background-color: #7a007f;
 }
+
+/* TOTAL */
 .total {
   font-size: 1.4em;
   margin: 20px auto;
@@ -118,6 +138,8 @@ h1 {
   font-weight: 700;
   text-align: center;
 }
+
+/* BOTONES PRINCIPALES */
 #finalizar-compra,
 #vaciar-carrito {
   background-color: #7a00cc;
@@ -129,17 +151,22 @@ h1 {
   cursor: pointer;
   font-weight: 700;
   transition: background-color 0.3s;
-  margin: 10px 10px;
+  margin: 10px;
 }
+
 #finalizar-compra:hover,
 #vaciar-carrito:hover {
   background-color: #590099;
 }
+
 .botones-principales {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
+
+/* FORMULARIO PAGO */
 #formulario-pago {
   max-width: 600px;
   margin: 30px auto;
@@ -150,18 +177,21 @@ h1 {
   text-align: left;
   display: none;
 }
+
 #formulario-pago h2 {
   text-align: center;
   color: #4b007d;
   margin-bottom: 25px;
   font-weight: 700;
 }
+
 label {
   display: block;
   margin: 10px 0 6px;
   font-weight: 600;
   color: #4b007d;
 }
+
 input[type="text"],
 input[type="month"],
 select {
@@ -170,15 +200,15 @@ select {
   border-radius: 8px;
   border: 1px solid #ce93d8;
   font-size: 1rem;
-  box-sizing: border-box;
   transition: border-color 0.3s;
 }
-input[type="text"]:focus,
-input[type="month"]:focus,
+
+input:focus,
 select:focus {
   border-color: #7a00cc;
   outline: none;
 }
+
 form button[type="submit"] {
   background-color: #7a00cc;
   color: white;
@@ -189,50 +219,55 @@ form button[type="submit"] {
   font-weight: 700;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.3s;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
+
 form button[type="submit"]:hover {
   background-color: #590099;
 }
+
 form a {
   color: #7a00cc;
   text-decoration: underline;
 }
-@media (max-width: 600px) {
-  .encabezado {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-  }
-  .logo {
-    height: 36px;
-  }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
   .menu {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
-    margin-top: 0;
-    padding: 10px;
   }
+
   .item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
+
+  .item-info {
+    padding: 10px 0;
+    text-align: center;
+  }
+
   .item img {
     margin-bottom: 10px;
   }
-  #formulario-pago {
-    margin: 20px 10px;
-    padding: 20px;
-  }
-  #finalizar-compra,
-  #vaciar-carrito {
-    width: 100%;
-    margin: 10px 0;
-  }
+
   .botones-principales {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+  }
+
+  #finalizar-compra,
+  #vaciar-carrito {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  #formulario-pago {
+    margin: 20px;
+    padding: 20px;
   }
 }
