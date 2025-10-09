@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #D1F2EB;
-  color:#A4F4CF;
+  background-color: #FFF0F5;
+  color:#FFB6C1;
  text-align: center;
   line-height: 1.6;
 }
@@ -187,5 +187,6 @@ footer {
   font-size: 1.8em;
   color: #4b0082;
 }
+
 
 
