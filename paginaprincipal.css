@@ -7,7 +7,9 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #FFB6C1;
+  background-color: 
+
+#A684FF;
   color:#FFB6C1;
  text-align: center;
   line-height: 1.6;
@@ -67,7 +69,7 @@ body {
 }
 
 .libro {
-  background-color: #FFF0F5;
+  background-color: #DDD6FF;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
@@ -187,6 +189,7 @@ footer {
   font-size: 1.8em;
   color: #4b0082;
 }
+
 
 
 
