@@ -68,7 +68,7 @@ body {
 }
 
 .libro {
-  background-color: #DDD6FF;
+  background-color: #FFEDD4;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
@@ -188,6 +188,7 @@ footer {
   font-size: 1.8em;
   color: #4b0082;
 }
+
 
 
 
