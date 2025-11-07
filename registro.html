@@ -6,11 +6,28 @@
   <title>Registro - N'C BOOKS</title>
   <link rel="stylesheet" href="registro.css" />
   <script>
-    function mostrarMensaje() {
-
+    function mostrarMensaje(event) {
       event.preventDefault(); 
-      document.querySelector('.formulario-registro').style.display = 'none';
 
+      // Obtener los valores del formulario
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+
+      // Crear objeto usuario
+      const nuevoUsuario = {
+        nombre,
+        email,
+        usuario,
+        password
+      };
+
+      // Guardar en LocalStorage
+      localStorage.setItem("usuarioRegistrado", JSON.stringify(nuevoUsuario));
+
+      // Ocultar el formulario y mostrar el mensaje de éxito
+      document.querySelector('.formulario-registro').style.display = 'none';
       document.querySelector('.mensaje-exito').style.display = 'block';
     }
   </script>
@@ -18,11 +35,9 @@
 <body>
 
   <header class="encabezado">
-    <div class="contenedor-logo">
-    </div>
     <nav class="menu">
       <a href="index.html">Inicio</a>
-       <a href="informacion.html">Informacion</a>
+      <a href="informacion.html">Información</a>
       <a href="categoria.html">Catálogo</a>
       <a href="contacto.html">Contacto</a>
       <a href="carritodecompras.html">Carrito</a>
@@ -32,7 +47,7 @@
   <main>
     <section class="formulario-registro">
       <h2>Formulario de Registro</h2>
-      <form onsubmit="mostrarMensaje()">
+      <form onsubmit="mostrarMensaje(event)">
         <label for="nombre">Nombre completo:</label>
         <input type="text" id="nombre" name="nombre" required />
 
@@ -52,9 +67,9 @@
     <section class="mensaje-exito" style="display: none;">
       <h2>¡Gracias por registrarte!</h2>
       <p>Tu cuenta ha sido creada con éxito. Ahora puedes iniciar sesión.</p>
-      <a href="index.html">
-    <button class="inicio">Inicio </button>
-  </a>
+      <a href="login.html">
+        <button class="inicio">Ir a Iniciar Sesión</button>
+      </a>
     </section>
   </main>
 
