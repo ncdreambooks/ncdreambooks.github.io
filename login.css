@@ -1,0 +1,119 @@
+/* ======= Estilos generales ======= */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f3e7e9, #e3eeff);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======= Encabezado ======= */
+.encabezado {
+  background-color: #5d3fd3;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #ffd700;
+}
+
+/* ======= Formulario ======= */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-login {
+  background-color: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.formulario-login h2 {
+  margin-bottom: 25px;
+  color: #5d3fd3;
+  font-size: 1.8em;
+}
+
+/* ======= Inputs ======= */
+label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #5d3fd3;
+  outline: none;
+}
+
+/* ======= Botón ======= */
+button {
+  margin-top: 20px;
+  background-color: #5d3fd3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #4b2fb8;
+  transform: scale(1.05);
+}
+
+/* ======= Footer ======= */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f7f7f7;
+  color: #777;
+  font-size: 0.9em;
+}
+
+/* ======= Responsividad ======= */
+@media (max-width: 600px) {
+  .formulario-login {
+    padding: 30px 25px;
+  }
+
+  .menu a {
+    display: block;
+    margin: 8px 0;
+  }
+}
+lo
