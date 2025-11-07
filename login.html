@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión - N'C BOOKS</title>
+  <link rel="stylesheet" href="login.css" />
+  <script>
+    function iniciarSesion(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById("usuario").value;
+      const password = document.getElementById("password").value;
+
+      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+
+      if (usuarioGuardado && 
+          usuario === usuarioGuardado.usuario && 
+          password === usuarioGuardado.password) {
+        alert("Inicio de sesión exitoso. ¡Bienvenido " + usuarioGuardado.nombre + "!");
+        window.location.href = "index.html"; // redirige al inicio
+      } else {
+        alert("Usuario o contraseña incorrectos. Intenta nuevamente.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="encabezado">
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="informacion.html">Información</a>
+      <a href="categoria.html">Catálogo</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carritodecompras.html">Carrito</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="formulario-login">
+      <h2>Iniciar Sesión</h2>
+      <form onsubmit="iniciarSesion(event)">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Ingresar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nicole's DreamBooks - Nicole Casillas</p>
+  </footer>
+</body>
+</html>
