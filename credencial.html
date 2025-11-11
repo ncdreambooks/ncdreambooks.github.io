@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Credencial - N'C BOOKS</title>
   <link rel="stylesheet" href="credencial.css" />
+  <title>Credencial de Usuario</title>
+
   <script>
     window.onload = function() {
       const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
@@ -18,6 +19,30 @@
       document.getElementById("nombre").textContent = usuarioActivo.nombre;
       document.getElementById("usuario").textContent = usuarioActivo.usuario;
       document.getElementById("correo").textContent = usuarioActivo.email;
+
+      // Mostrar foto guardada (si existe)
+      const fotoPerfil = document.getElementById("fotoPerfil");
+      if (usuarioActivo.foto) {
+        fotoPerfil.src = usuarioActivo.foto;
+      }
+
+      // Evento para cambiar foto
+      const inputFoto = document.getElementById("inputFoto");
+      inputFoto.addEventListener("change", function(event) {
+        const archivo = event.target.files[0];
+        if (archivo) {
+          const lector = new FileReader();
+          lector.onload = function(e) {
+            const imagenBase64 = e.target.result;
+            fotoPerfil.src = imagenBase64;
+
+            // Guardar la imagen en localStorage junto con los datos del usuario
+            usuarioActivo.foto = imagenBase64;
+            localStorage.setItem("usuarioActivo", JSON.stringify(usuarioActivo));
+          };
+          lector.readAsDataURL(archivo);
+        }
+      });
     };
 
     function cerrarSesion() {
@@ -42,7 +67,10 @@
     <section class="credencial">
       <h2>Credencial de Usuario</h2>
       <div class="tarjeta">
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto" class="foto">
+        <img id="fotoPerfil" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto" class="foto">
+        <input type="file" id="inputFoto" accept="image/*" style="display: none;">
+        <button onclick="document.getElementById('inputFoto').click()">Cambiar Foto</button>
+
         <p><strong>Nombre:</strong> <span id="nombre"></span></p>
         <p><strong>Usuario:</strong> <span id="usuario"></span></p>
         <p><strong>Correo:</strong> <span id="correo"></span></p>
