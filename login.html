@@ -17,8 +17,15 @@
       if (usuarioGuardado && 
           usuario === usuarioGuardado.usuario && 
           password === usuarioGuardado.password) {
+        
         alert("Inicio de sesión exitoso. ¡Bienvenido " + usuarioGuardado.nombre + "!");
-        window.location.href = "index.html"; // redirige al inicio
+
+        // 🔹 Guardamos la sesión del usuario activo
+        localStorage.setItem("usuarioActivo", JSON.stringify(usuarioGuardado));
+
+        // 🔹 Redirigimos a la página de credencial
+        window.location.href = "credencial.html";
+
       } else {
         alert("Usuario o contraseña incorrectos. Intenta nuevamente.");
       }
