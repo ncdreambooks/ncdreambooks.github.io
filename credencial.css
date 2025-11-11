@@ -178,3 +178,32 @@ footer .menu a:hover {
     width: 85%;
   }
 }
+.foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #a64ca6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #903b90;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
