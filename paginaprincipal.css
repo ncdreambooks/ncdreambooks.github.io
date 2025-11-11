@@ -106,13 +106,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #6a0dad;
+  color: #F5CBA7;
   font-size: 15px;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #4b0082;
+  color: #F5CBA7;
 }
 
 
@@ -186,8 +186,9 @@ footer {
   width: 100%;
   margin-bottom: 10px;
   font-size: 1.8em;
-  color: #4b0082;
+  color: #F5CBA7;
 }
+
 
 
 
