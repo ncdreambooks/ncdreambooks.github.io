@@ -3,6 +3,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
 .encabezado {
@@ -20,7 +21,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .logo {
@@ -33,7 +35,7 @@ body {
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 10px;
-  color: #f0e9ff;
+  color: #4a235a;
 }
 
 .menu {
@@ -64,6 +66,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
+  padding: 20px;
 }
 
 .formulario-login {
@@ -78,6 +81,21 @@ main {
 .formulario-login h2 {
   color: #6c3483;
   margin-bottom: 25px;
+}
+
+.foto-perfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6c3483;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(108, 52, 131, 0.5);
 }
 
 .formulario-login label {
@@ -114,9 +132,28 @@ main {
   background-color: #4a235a;
 }
 
+.btn-cerrar-sesion {
+  display: inline-block;
+  background-color: #bb8fce;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.btn-cerrar-sesion:hover {
+  background-color: #9b59b6;
+  transform: scale(1.05);
+}
+
 footer {
   background-color: #d2b4de;
-  color: white;
+  color: #4a235a;
   text-align: center;
   padding: 20px;
   font-size: 1rem;
@@ -127,8 +164,8 @@ footer .menu {
 }
 
 footer .menu a {
-  font-size: 1.3rem;
-  color: #6c3483;
+  font-size: 1.1rem;
+  color: #4a235a;
   transition: color 0.3s ease;
 }
 
@@ -138,6 +175,6 @@ footer .menu a:hover {
 
 @media (max-width: 768px) {
   .formulario-login {
-    width: 80%;
+    width: 85%;
   }
 }
