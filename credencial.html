@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credencial - N'C BOOKS</title>
+  <link rel="stylesheet" href="credencial.css" />
+  <script>
+    window.onload = function() {
+      const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+      if (!usuarioActivo) {
+        alert("No has iniciado sesión.");
+        window.location.href = "login.html";
+        return;
+      }
+
+      document.getElementById("nombre").textContent = usuarioActivo.nombre;
+      document.getElementById("usuario").textContent = usuarioActivo.usuario;
+      document.getElementById("correo").textContent = usuarioActivo.email;
+    };
+
+    function cerrarSesion() {
+      localStorage.removeItem("usuarioActivo");
+      alert("Sesión cerrada.");
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+  <header class="encabezado">
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="informacion.html">Información</a>
+      <a href="categoria.html">Catálogo</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="carritodecompras.html">Carrito</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="credencial">
+      <h2>Credencial de Usuario</h2>
+      <div class="tarjeta">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Foto" class="foto">
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Usuario:</strong> <span id="usuario"></span></p>
+        <p><strong>Correo:</strong> <span id="correo"></span></p>
+      </div>
+      <button onclick="cerrarSesion()">Cerrar Sesión</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nicole's DreamBooks - Nicole Casillas</p>
+  </footer>
+</body>
+</html>
