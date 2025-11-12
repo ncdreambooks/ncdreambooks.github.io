@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     intro.classList.add("fadeOut");
-  }, 2000);
+  }, 2200);
 
   setTimeout(() => {
     intro.style.display = "none";
