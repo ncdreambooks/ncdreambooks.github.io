@@ -45,6 +45,23 @@
   opacity:0;
   animation:glowEffect 1.5s ease-out forwards;
 }
+.intro-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:"Poppins",sans-serif;
+  font-size:2rem;
+  color:#fff;
+  letter-spacing:2px;
+  opacity:0;
+  animation:textFade 2.2s ease-out forwards;
+}
+@keyframes textFade{
+  0%{opacity:0}
+  40%{opacity:1}
+  100%{opacity:0}
+}
 @keyframes appear{
   from{transform:scale(0);opacity:0}
   to{transform:scale(1);opacity:1}
