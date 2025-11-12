@@ -9,13 +9,13 @@
     function mostrarMensaje(event) {
       event.preventDefault(); 
 
-      // Obtener los valores del formulario
+  
       const nombre = document.getElementById("nombre").value;
       const email = document.getElementById("email").value;
       const usuario = document.getElementById("usuario").value;
       const password = document.getElementById("password").value;
 
-      // Crear objeto usuario
+  
       const nuevoUsuario = {
         nombre,
         email,
@@ -23,10 +23,10 @@
         password
       };
 
-      // Guardar en LocalStorage
+  
       localStorage.setItem("usuarioRegistrado", JSON.stringify(nuevoUsuario));
 
-      // Ocultar el formulario y mostrar el mensaje de éxito
+  
       document.querySelector('.formulario-registro').style.display = 'none';
       document.querySelector('.mensaje-exito').style.display = 'block';
     }
@@ -43,26 +43,26 @@
       <a href="carritodecompras.html">Carrito</a>
     </nav>
   </header>
+<main>
+  <section class="formulario-registro">
+    <h2>Formulario de Registro</h2>
+    <form action="https://formspree.io/f/xpwkwaab" method="POST">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-  <main>
-    <section class="formulario-registro">
-      <h2>Formulario de Registro</h2>
-      <form onsubmit="mostrarMensaje(event)">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required />
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
 
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required />
+      <label for="usuario">Nombre de usuario:</label>
+      <input type="text" id="usuario" name="usuario" required />
 
-        <label for="usuario">Nombre de usuario:</label>
-        <input type="text" id="usuario" name="usuario" required />
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required />
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required />
-
-        <button type="submit">Registrarse</button>
-      </form>
-    </section>
+      <button type="submit">Registrarse</button>
+    </form>
+  </section>
+</main>
 
     <section class="mensaje-exito" style="display: none;">
       <h2>¡Gracias por registrarte!</h2>
@@ -79,4 +79,5 @@
 
 </body>
 </html>
+
 
