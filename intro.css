@@ -31,7 +31,7 @@
   z-index:2;
 }
 .cover.back{
-  background:#3a0066;
+  background#ae91c4;
   transform:rotateY(180deg);
 }
 .glow{
@@ -52,7 +52,7 @@
   transform:translate(-50%,-50%);
   font-family:"Poppins",sans-serif;
   font-size:2rem;
-  color:#fff;
+  color: #420470;
   letter-spacing:2px;
   opacity:0;
   animation:textFade 2.2s ease-out forwards;
