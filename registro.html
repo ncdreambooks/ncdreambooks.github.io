@@ -7,13 +7,7 @@
   <link rel="stylesheet" href="registro.css" />
   <script>
     function mostrarMensaje(event) {
-      event.preventDefault(); 
-      const nombre = document.getElementById("nombre").value;
-      const email = document.getElementById("email").value;
-      const usuario = document.getElementById("usuario").value;
-      const password = document.getElementById("password").value;
-      const nuevoUsuario = { nombre, email, usuario, password };
-      localStorage.setItem("usuarioRegistrado", JSON.stringify(nuevoUsuario));
+      event.preventDefault();
       document.querySelector('.formulario-registro').style.display = 'none';
       document.querySelector('.mensaje-exito').style.display = 'block';
     }
@@ -33,7 +27,7 @@
   <main>
     <section class="formulario-registro">
       <h2>Formulario de Registro</h2>
-      <form action="https://formspree.io/f/xpwkwaab" method="POST" onsubmit="mostrarMensaje(event)">
+      <form onsubmit="mostrarMensaje(event)">
         <label for="nombre">Nombre completo:</label>
         <input type="text" id="nombre" name="nombre" required />
 
